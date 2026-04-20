@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <h5 class="modal-title">Stok Seç</h5>
+  <button type="button" class="btn-close" (click)="cancel()"></button>
+</div>
+
+<div class="modal-body">
+
+
+  <!-- GRID -->
+  <!-- <ag-grid-angular
+    class="ag-theme-quartz"
+    style="height: 400px;"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    rowSelection="multiple"
+    (gridReady)="onGridReady($event)"
+    (selectionChanged)="onSelectionChanged()">
+  </ag-grid-angular> -->
+
+
+        <ag-grid-angular style="height:400px;" class="ag-theme-quartz" [rowData]="rowData" [columnDefs]="columnDefs"
+          (gridReady)="onGridReady($event)"
+          [rowSelection]="{ mode: 'multiRow', checkboxes: false, enableClickSelection: true }" [rowHeight]="22"
+          [headerHeight]="30" (selectionChanged)="onSelectionChanged()" >
+        </ag-grid-angular>
+
+
+
+  <!-- SEÇİLENLER -->
+  <div class="mt-2 small text-muted">
+    Seçilen: {{ selectedRows.length }} kayıt
+  </div>
+
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="cancel()">İptal</button>
+  <button class="btn btn-primary" (click)="confirm()">
+    Seç ({{ selectedRows.length }})
+  </button>
+</div>

@@ -1,0 +1,78 @@
+<div class="iwb-page-actions m-2">
+
+    <button class="iwb-btn iwb-btn-save" (click)="Kaydet()">
+        <span class="iwb-icon iwb-icon-save">✔</span> Kaydet
+    </button>
+    <button class="iwb-btn iwb-btn-close" (click)="Kapat()">
+        <span class="iwb-icon iwb-icon-close">✖</span> Kapat
+    </button>
+</div>
+
+
+<div class="iwb-layout" style="height: calc(100vh - 145px);">
+
+
+
+    <div class="iwb-top ">
+
+
+    </div>
+
+
+
+
+    <div class="iwb-middle">
+
+
+
+
+
+        <div class="detay-container">
+
+            <div class="activity-panel" style="width: 40%;">
+
+                <div class="panel-title m-0">
+                    İşçilik Tipi= {{selectedItem?.name}}
+                    
+                    <!-- Sipariş İçeriği -->
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <ul class="nav iwb-tabs">
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'materials'" (click)="activeTab = 'materials'">
+                    Personeller
+                </button>
+            </li>
+
+         
+        </ul>
+
+
+        <base-toolbar *ngIf="activeTab === 'materials'" [toolbar]="host.headerToolbar()"
+            [toolbarState]="_LaborToolbarStateService.ctx">
+        </base-toolbar>
+        <ag-grid-angular *ngIf="activeTab === 'materials'" style="height:100%;" class="ag-theme-quartz"
+            [rowData]="rowData" (gridReady)="getList($event)" [columnDefs]="columnDefs"
+            [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }" [rowHeight]="22"
+            [headerHeight]="30">
+        </ag-grid-angular>
+
+
+
+
+
+
+    </div>
+
+
+
+
+</div>

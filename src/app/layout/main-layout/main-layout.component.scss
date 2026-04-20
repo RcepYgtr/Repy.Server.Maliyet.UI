@@ -1,0 +1,289 @@
+/* ===== GENEL ===== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== LAYOUT ===== */
+.iwb-layout {
+    display: flex;
+    height: 100vh;
+}
+
+
+
+
+/* ===== MAIN ===== */
+.iwb-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== TOPBAR ===== */
+.iwb-topbar {
+    height: 42px;
+    background: linear-gradient(90deg, #0f7ba5, #0a5c80);
+    color: white;
+    padding: 10px;
+    font-size: 13px;
+}
+
+/* ===== TAB BAR ===== */
+/* ===== TAB BAR ===== */
+.iwb-tabbar {
+    display: flex;
+    align-items: flex-end;
+    height: 42px;
+    padding: 0 10px;
+    background: linear-gradient(90deg,
+            #0f7ba5,
+            #0a5c80);
+    overflow-x: auto;
+    /* tab çoğalırsa scroll */
+    white-space: nowrap;
+
+}
+
+/* ===== TAB ===== */
+.iwb-tab {
+    width: 160px;
+    /* 🔴 SABİT GENİŞLİK */
+    min-width: 160px;
+    max-width: 160px;
+
+    background: #1984b3;
+    color: #ffffff;
+    padding: 8px 28px 8px 12px;
+    margin-right: 2px;
+    font-size: 13px;
+
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    cursor: pointer;
+    position: relative;
+
+    overflow: hidden;
+    /* taşanı gizle */
+    text-overflow: ellipsis;
+    /* ... */
+    white-space: nowrap;
+}
+
+
+
+/* 🔴 Anasayfa */
+.iwb-tab-home {
+    width: 110px;
+    min-width: 110px;
+    max-width: 110px;
+    background: #1984b3;
+    color: #ffffff;
+    padding: 8px 12px 8px 40px;
+    margin-right: 2px;
+    font-size: 13px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.iwb-tab-home .iwb-tab-home-icon{
+    position: absolute;
+    left: 8px;
+    top: 0px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.6;
+    font-size: 20px;
+}
+
+
+/* Hover */
+.iwb-tab:hover {
+    background: #22a6b3;
+}
+
+/* ===== AKTİF TAB ===== */
+.iwb-tab.active {
+    background: #ffffff;
+    color: #0f7ba5;
+    font-weight: 600;
+}
+
+/* ===== KAPAT BUTONU ===== */
+.iwb-tab-close {
+    position: absolute;
+    right: 8px;
+    top: 0px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.6;
+    font-size: 20px;
+}
+
+.iwb-tab-close:hover {
+    opacity: 1;
+}
+
+
+/* ===== CONTENT ===== */
+.iwb-content {
+    flex: 1;
+    background: #ffffff;
+    padding: 0px;
+    overflow-y: auto;
+}
+
+/* ===== TOOLBAR ===== */
+/* ===== ACTION BAR ===== */
+.iwb-action-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* ===== BASE BUTTON ===== */
+.iwb-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 6px;
+}
+
+/* ===== ICON ===== */
+.iwb-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* ===== SAVE ===== */
+.iwb-btn-save .iwb-icon-save {
+    background: #6cc070;
+    /* iWorkBetter yeşili */
+}
+
+/* ===== CLOSE ===== */
+.iwb-btn-close .iwb-icon-close {
+    background: #f0ad4e;
+    /* iWorkBetter turuncusu */
+}
+
+/* ===== HOVER (çok hafif) ===== */
+.iwb-btn:hover {
+    opacity: 0.85;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== TOPBAR ===== */
+.iwb-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: #fff;
+}
+
+/* SOL TARAF */
+.topbar-left .system-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* SAĞ TARAF */
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* USER INFO */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-text {
+    text-align: right;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.user-role {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* AVATAR */
+.user-avatar img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.6);
+}
+
+/* ICONS */
+.topbar-icons {
+    display: flex;
+    gap: 18px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.topbar-icons i:hover {
+    opacity: 0.7;
+}

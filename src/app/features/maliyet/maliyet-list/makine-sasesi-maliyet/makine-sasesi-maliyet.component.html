@@ -1,0 +1,262 @@
+<!-- <div class="iwb-page-actions m-2">
+
+</div>
+
+
+<div class="iwb-layout" style="height: calc(100vh - 130px);">
+
+
+
+    <div class="iwb-top ">
+
+
+    </div>
+
+
+
+
+    <div class="iwb-middle">
+
+
+
+
+        <form [formGroup]="form">
+            <div class="detay-container">
+
+                <div class="activity-panel" style="width: 25%; min-width: 400px;">
+
+                    <div class="timeline">
+
+                        <div>
+
+                            <base-auto-complete-dropdown hasAccent hasLookup formControlName="makineSasesiTypeId"
+                                label="Şase Tipi" dbKey="MAKINESASESI_TYPES" displayField="name" [grid]="5"
+                                [allowAdd]="false" valueField="id">
+                            </base-auto-complete-dropdown>
+
+                            <base-input *ngIf="form.get('kuyuDerinligi')" formControlName="kuyuDerinligi" type="number"
+                                label="Kuyu Derinliği" hasAccent [grid]="4"></base-input>
+
+                            <base-input *ngIf="form.get('kuyuGenisligi')" formControlName="kuyuGenisligi" type="number"
+                                label="Kuyu Genişliği" hasAccent [grid]="4"></base-input>
+
+
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+                <div class="" style="width: 25%; min-width: 400px;">
+
+
+
+                    <div class="timeline">
+
+
+
+
+                        <div class="cost-summary-pro">
+
+                            <div class="title">MALİYET ÖZETİ</div>
+
+                            <div class="R">
+                                <span>Malzeme</span>
+                                <span class="">{{ itemCost | number:'1.0-0' }} ₺</span>
+                            </div>
+
+                            <div class="R">
+                                <span>İşçilik</span>
+                                <span class="">{{ laborCost | number:'1.0-0' }} ₺</span>
+                            </div>
+
+                            <div class="separator"></div>
+
+                            <div class="R total">
+                                <span>Toplam</span>
+                                <span class="value">{{ totalCost | number:'1.0-0' }} ₺</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </form>
+
+        <ul class="nav iwb-tabs">
+            <li class="nav-item"><button class="nav-link active">Malzemeler</button></li>
+        </ul>
+
+
+        <ag-grid-angular style="height:100%;" class="ag-theme-quartz" [rowData]="rowData" [columnDefs]="columnDefs"
+            [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }" [rowHeight]="22"
+            [headerHeight]="35">
+        </ag-grid-angular>
+
+        <div class="erp-table-loader" *ngIf="loading">
+            <div class="erp-spinner"></div>
+            <div class="erp-loader-text">Yükleniyor...</div>
+        </div>
+
+
+    </div>
+
+
+
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="iwb-page-actions m-2">
+
+</div>
+
+
+<div class="iwb-layout" style="height: calc(100vh - 130px);">
+
+
+
+  <div class="iwb-top ">
+
+
+  </div>
+
+
+
+
+  <div class="iwb-middle">
+
+
+
+
+    <form [formGroup]="form">
+      <div class="detay-container">
+
+        <div class="activity-panel" style="width: 25%; min-width: 400px;">
+
+          <div class="timeline">
+
+            <div>
+              <base-auto-complete-dropdown hasAccent hasLookup formControlName="makineSasesiTypeId" label="Şase Tipi"
+                dbKey="MAKINESASESI_TYPES" displayField="name" [grid]="5" [allowAdd]="false" valueField="id"
+                (valueChange)="onTypeChange($event)">
+              </base-auto-complete-dropdown>
+
+
+              <base-input *ngIf="form.get('rayArasi')" formControlName="rayArasi" type="number" label="Ray Arası"
+                hasAccent [grid]="4"></base-input>
+
+              <base-input *ngIf="form.get('kuyuDerinligi')" formControlName="kuyuDerinligi" type="number"
+                label="Kuyu Derinliği" hasAccent [grid]="4"></base-input>
+
+              <base-input *ngIf="form.get('kuyuGenisligi')" formControlName="kuyuGenisligi" type="number"
+                label="Kuyu Genişliği" hasAccent [grid]="4"></base-input>
+
+
+              <base-auto-complete-dropdown *ngIf="form.get('capacity')" hasAccent hasLookup formControlName="capacity"
+                label="Kapasite" dbKey="CAPACITIES" displayField="capacity" [grid]="5" [allowAdd]="false"
+                valueField="capacity">
+              </base-auto-complete-dropdown>
+
+            </div>
+
+            <div class="calculator-container">
+              <div (click)="hesapla()" class="button-grup button-item btn btn-sm btn-calculator">
+                <div>
+                  <img class="img-container" src="calculator.png" alt="">
+                </div>
+                <span class="d-none d-sm-inline button-label">Hesapla</span>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div class="" style="width: 25%; min-width: 400px;">
+
+
+
+          <div class="timeline">
+
+
+
+
+            <div class="cost-summary-pro">
+
+              <div class="title">MALİYET ÖZETİ</div>
+
+              <div class="R">
+                <span>Malzeme</span>
+                <span class="">{{ itemCost | number:'1.0-0' }} ₺</span>
+              </div>
+
+              <div class="R">
+                <span>İşçilik</span>
+                <span class="">{{ laborCost | number:'1.0-0' }} ₺</span>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="R total">
+                <span>Toplam</span>
+                <span class="value">{{ totalCost | number:'1.0-0' }} ₺</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </form>
+
+    <ul class="nav iwb-tabs">
+      <li class="nav-item"><button class="nav-link active">Malzemeler</button></li>
+    </ul>
+
+
+    <ag-grid-angular style="height:100%;" class="ag-theme-quartz" [rowData]="rowData" [columnDefs]="columnDefs"
+      [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }" [rowHeight]="22"
+      [headerHeight]="35" (rowDoubleClicked)="onRowDoubleClick($event)"   [rowClassRules]="rowClassRules" (gridReady)="onGridReady($event)" [getRowId]="getRowId">
+    </ag-grid-angular>
+
+    <div class="erp-table-loader" *ngIf="loading">
+      <div class="erp-spinner"></div>
+      <div class="erp-loader-text">Yükleniyor...</div>
+    </div>
+
+
+  </div>
+
+
+
+
+</div>

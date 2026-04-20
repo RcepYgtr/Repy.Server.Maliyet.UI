@@ -1,0 +1,169 @@
+:host ::ng-deep {
+
+    .ag-root-wrapper.ag-layout-normal {
+        border-radius: 0;
+        border-top:0;
+        
+    }
+
+    .ag-header-cell-text {
+        word-break: break-word;
+        font-size: 12px;
+    }
+
+    .ag-header-cell.header-color {
+        color: #e77c09;
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::ng-deep .ag-row.row-created-highlight {
+  background-color: rgb(107, 175, 98);
+  border-left: 4px solid #d32f2f;
+}
+
+::ng-deep .ag-row.row-no-created-highlight {
+  background-color: transparent;
+  border-left: 0px solid transparent;
+}
+
+:host ::ng-deep {
+  .ag-theme-quartz .ag-row-selected {
+    background-color: #cfe8ff !important;
+    /* ERP mavi */
+  }
+
+  .ag-theme-quartz .ag-row-selected:hover {
+    background-color: #b7dcff !important;
+  }
+
+  .ag-theme-quartz .ag-row-selected .ag-cell {
+    background-color: transparent !important;
+  }
+.ag-theme-quartz .ag-row:hover:not(.ag-row-selected) {
+  background-color: #f3f7fb;
+}
+.ag-theme-quartz .ag-row-selected .ag-cell-value {
+  background: transparent !important;
+}
+  .tree-text-hover:hover {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: rgb(148, 148, 148);
+    text-underline-offset: 2px;
+  }
+
+  .ag-floating-filter-body {
+    display: block;
+    height: 30px;
+  }
+}
+
+
+:host ::ng-deep .ag-cell {
+  // font-family: monospace;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.ag-floating-filter-button {
+  display: none !important;
+}
+
+
+
+
+.ag-header-cell-text {
+  white-space: nowrap;
+}
+
+.ag-header-cell-text {
+  white-space: normal !important;
+  line-height: 1.2;
+  text-align: center; /* isteğe bağlı */
+}
+
+/* Floating filter input */
+
+
+/* Focus olunca */
+.ag-floating-filter-input input:focus {
+  box-shadow: none !important;
+  outline: none;
+}
+
+
+.ag-header-cell{
+  padding: 3px !important;
+}
+.ag-header-cell .ag-input-field-input {
+  border-color: #dc3545 !important;
+  font-size: 11px;
+
+
+}
+
+.ag-floating-filter {
+  padding: 2px;
+
+}
+
+.ag-theme-quartz .ag-header-cell-text {
+  white-space: normal !important;
+  line-height: 1.2;
+  text-align: center; /* isteğe bağlı */
+}
+
+
+.ag-floating-filter-input input:not(:placeholder-shown) {
+  border-color: #dc3545;
+  background-color: #f9e1e1;
+}
+
+.ag-floating-filter-body {
+  height: 25px !important;
+}
+
+.ag-floating-filter-input {
+  height: 25px !important;
+}
+
+.ag-header-icon.ag-header-cell-filter-button {
+  display: none;
+}

@@ -1,0 +1,138 @@
+<!-- 
+<div class="iwb-page-actions m-2">
+
+    <button class="iwb-btn iwb-btn-save" (click)="Kaydet()">
+        <span class="iwb-icon iwb-icon-save">✔</span> Kaydet
+    </button>
+
+</div>
+
+<div class="iwb-layout" style="height: calc(100vh - 130px);">
+
+
+  <div class="iwb-middle">
+
+
+
+
+    <form [formGroup]="form">
+      <div class="detay-container">
+
+        <div class="activity-panel" style="width: 25%; min-width: 400px;">
+
+
+
+          <div class="timeline">
+
+
+            <div>
+              <base-auto-complete-dropdown hasAccent hasLookup formControlName="roleId" label="Rol" dbKey="ROLES"
+                (gridReady)="onGridReady($event)" displayField="name" [grid]="5" [allowAdd]="false" valueField="id">
+              </base-auto-complete-dropdown>
+
+            </div>
+
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+      </div>
+
+    </form>
+    <ul class="nav iwb-tabs">
+      <li class="nav-item"><button class="nav-link active">İzin Yönetimi</button></li>
+    </ul>
+    <ag-grid-angular (gridReady)="onGridReady($event)" [context]="{ componentParent: this }" [rowData]="matrix()" [rowHeight]="27"
+        [headerHeight]="30"
+      [columnDefs]="columnDefs" [gridOptions]="gridOptions" class="ag-theme-quartz" style="height: 100%;">
+    </ag-grid-angular>
+
+
+    <div class="erp-table-loader" *ngIf="loading">
+      <div class="erp-spinner"></div>
+      <div class="erp-loader-text">Yükleniyor...</div>
+    </div>
+
+
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+<div style="display: grid; grid-template-columns: 400px auto; height: 100%;min-width: 500px;">
+
+   <ag-grid-angular style="height:100%; " class="ag-theme-quartz" [rowData]="roles"
+        (gridReady)="getList($event)"
+        [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }" [rowHeight]="22"
+        [headerHeight]="30" (rowClicked)="onRowClicked($event)" 
+        [gridOptions]="gridOptions2">
+    </ag-grid-angular> 
+
+
+  <div class="role-panel">
+
+
+    <div class="role-header">
+      <div class="title">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Rol Yönetimi</span>
+      </div>
+
+      <button class="iwb-btn iwb-btn-save" (click)="Kaydet()">
+        ✔ Kaydet
+      </button>
+    </div>
+
+    <div class="role-user" *ngIf="selectedItem">
+      <div class="user-name">{{ selectedItem.userName }}</div>
+      <div class="user-email">{{ selectedItem.email }}</div>
+    </div>
+
+
+    <div class="empty" *ngIf="!selectedItem">
+      Kullanıcı seçiniz
+    </div>
+
+
+    <div class="role-list" >
+
+      <ag-grid-angular (gridReady)="onGridReady($event)" [context]="{ componentParent: this }" [rowData]="matrix()"
+        [rowHeight]="27" [headerHeight]="30" [columnDefs]="columnDefs" [gridOptions]="gridOptions"
+        class="ag-theme-quartz" style="height: 100%;">
+      </ag-grid-angular>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- 
+<div class="erp-table-loader" *ngIf="isLoading">
+  <div class="erp-spinner"></div>
+  <div class="erp-loader-text">Yükleniyor...</div>
+</div> -->

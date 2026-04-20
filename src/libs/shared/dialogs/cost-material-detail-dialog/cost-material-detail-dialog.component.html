@@ -1,0 +1,25 @@
+ <div class="modal-header">
+      <h5 class="modal-title">{{ title }}</h5>
+      <button class="btn-close" (click)="close()"></button>
+    </div>
+
+    <div class="modal-body">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>Parça</th>
+            <th>Adet</th>
+            <th>B.Fiyat</th>
+            <th>Toplam</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{ item.componentName }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.unitCost | number:'1.2-2' }}</td>
+            <td>{{ item.total | number:'1.2-2' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

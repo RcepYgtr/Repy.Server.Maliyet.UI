@@ -1,0 +1,529 @@
+@use "form";
+@use "action-toolbar";
+ @use "tab";
+ @use "ag-grid-table";
+ @use "loader";
+
+
+
+/* 🌍 ANA LAYOUT */
+.iwb-layout {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 85px);
+}
+
+/* 🔼 ÜST & 🔽 ALT SABİT */
+.iwb-top,
+.iwb-bottom {
+  flex-shrink: 0;
+}
+
+/* 🔥 ORTA HER ZAMAN KALANI ALIR */
+.iwb-middle {
+  flex: 1;
+  min-height: 0;
+  /* AG-GRID kuralı */
+  display: flex;
+  flex-direction: column;
+ // overflow: hidden;
+  overflow: visible;
+}
+
+/* GRID TAM DOLDURSUN */
+.iwb-middle base-grid,
+.iwb-middle ag-grid-angular {
+  flex: 1;
+  min-height: 0;
+}
+
+/* FORM SCROLL */
+.iwb-form-container {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* ALT TAB CONTENT */
+.iwb-tab-content {
+  height: 200px;
+}
+
+
+
+
+
+
+
+
+.detay-container {
+  display: flex;
+  gap: 24px;
+  padding: 16px;
+}
+
+.panel {
+  border: 2px solid #7cc3d0;
+  padding: 16px;
+}
+
+.left {
+  width: 30%;
+}
+
+.right {
+  width: 70%;
+}
+
+.panel-title {
+  background: #7cc3d0;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 16px;
+
+  input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #4fa3b6;
+    padding: 6px 4px;
+    outline: none;
+  }
+
+  label {
+    font-size: 12px;
+    color: #777;
+  }
+}
+
+.refresh-btn {
+  margin-top: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #0b6b88;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 36px;
+    height: 32px;
+    width: 2px;
+    background: #7cc3d0;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #d3e9ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-right: 16px;
+        z-index: 999;
+  }
+
+  &.active .icon {
+    background: #0b6b88;
+  }
+
+  .label {
+    font-weight: 600;
+  }
+
+  .status {
+    color: #0b6b88;
+    font-size: 13px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Sipariş içerik
+
+.siparis-icerik {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+// .icerik-item {
+//   display: flex;
+//   align-items: center;
+//   padding: 2px 16px;
+//   border-radius: 8px;
+//   border: 1px solid #dceff3;
+//   background: #f9fdfe;
+//   transition: all .2s ease;
+//   cursor: default;
+
+//   &:hover {
+//     background: #eef8fb;
+//   }
+
+//   &.active {
+//     border-left: 6px solid #0b6b88;
+//     background: #eef8fb;
+//   }
+
+//   &.success .badge {
+//     background: #2fa36b;
+//   }
+
+//   &.warning .badge {
+//     background: #f0a500;
+//   }
+
+//   &.passive .badge {
+//     background: #b5c7ce;
+//   }
+// }
+
+.icerik-item {
+  display: flex;
+  align-items: center;
+  padding: 2px 16px;
+  border-radius: 8px;
+  border: 1px solid #dceff3;
+  background: #f9fdfe;
+  transition: all .2s ease;
+
+  &.active {
+    background: #eef8fb;
+
+    cursor: pointer;
+  }
+
+  /* 🟢 SUCCESS */
+  &.success.active {
+    border-left: 6px solid #2fa36b;
+
+    .icon {
+      background: #e6f6ee;
+      color: #2fa36b;
+    }
+
+    .badge {
+      background: #2fa36b;
+    }
+  }
+
+  /* 🟡 WARNING */
+  &.warning.active {
+    border-left: 6px solid #f0a500;
+
+    .icon {
+      background: #fff3d6;
+      color: #f0a500;
+    }
+
+    .badge {
+      background: #f0a500;
+    }
+  }
+
+
+
+  &.waiting.active {
+    border-left: 6px solid #b9b9b9;
+
+    .icon {
+      background: rgb(255, 255, 255);
+      color: #b9b9b9;
+    }
+
+    .badge {
+      background: #b9b9b9;
+    }
+  }
+
+
+    /* ⚪ WAITING */
+  &.passive {
+    opacity: 0.65;
+
+    .icon {
+      background: #eef2f4;
+      color: #9aaeb6;
+    }
+
+    .badge {
+      display: none; // 👈 yazı yok
+    }
+  }
+
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #d3e9ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  color: #0b6b88;
+  font-size: 18px;
+}
+
+.text {
+  flex: 1;
+
+  .title {
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    color: #6b8a94;
+  }
+}
+
+.status {
+  .badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Olay görüntüleyici
+.activity-panel {
+  border: 1px solid #cfe6ec;
+  padding: 14px;
+  background: #f9fdfe;
+  height: 100%;
+}
+
+.panel-title {
+  font-weight: 600;
+  color: #0b6b88;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 12px;
+  position: relative;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 6px;
+    background: #b5c7ce;
+  }
+
+  &.create .dot {
+    background: #2fa36b;
+  }
+
+  &.update .dot {
+    background: #f0a500;
+  }
+
+  &.process .dot {
+    background: #0b6b88;
+  }
+}
+
+.content {
+  background: #fff;
+  border: 1px solid #e1f0f4;
+  border-radius: 6px;
+  padding: 10px 12px;
+  flex: 1;
+
+  .action {
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .meta {
+    font-size: 12px;
+    color: #6b8a94;
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+    justify-content: space-between;
+    .module {
+      background: #eef6f8;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  }
+
+  .time {
+    font-size: 11px;
+    color: #9aaeb6;
+    margin-top: 6px;
+  }
+}
+
+
+
+.empty-activity {
+  height: 100%;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #6b8a94;
+}
+
+.empty-title {
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #0b6b88;
+}
+
+.empty-subtitle {
+  margin-top: 4px;
+  font-size: 12px;
+  max-width: 220px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status-area {
+  position: relative;
+}
+
+.status-menu {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  padding: 6px 0;
+  width: 160px;
+  z-index: 9999;
+}
+
+.menu-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.menu-item:hover {
+  background: #f3f6f9;
+}

@@ -1,0 +1,381 @@
+/* HEADER */
+.iwb-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fff;
+}
+
+.iwb-page-title {
+    font-size: 24px;
+    color: #777;
+}
+
+/* FORM */
+.iwb-form-container {
+    padding: 20px 16px;
+    background: #fff;
+}
+
+.iwb-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0px;
+}
+
+.iwb-form-col {
+    max-width: 520px;
+}
+
+/* ROW */
+.iwb-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* ROW WITH ACCENT */
+.iwb-row.has-accent {
+    grid-template-columns: 140px 4px 1fr auto;
+}
+
+/* LABEL */
+.iwb-label {
+    font-size: 13px;
+    color: #555;
+    text-align: right;
+    margin-right: 6px;
+}
+
+/* 🔴 ACCENT (SADECE has-accent) */
+.iwb-row:not(.has-accent) .iwb-field-accent {
+    display: none;
+}
+
+.iwb-row .form-control {
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+
+.iwb-field-accent {
+    width: 4px;
+    height: 26px;
+    background: #d9534f;
+    border-radius: 0px;
+}
+
+/* FIELD */
+.iwb-field input {
+    height: 26px;
+    font-size: 13px;
+}
+
+/* LOOKUP */
+.iwb-lookup {
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    height: 26px;
+    background: #fff;
+}
+
+.iwb-row.has-lookup .iwb-lookup {
+    display: flex;
+    align-items: center;
+    height: 26px;
+    background: #fff;
+    border-top: 2px solid #f0ad4e;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.iwb-lookup-input {
+    border: none;
+    outline: none;
+    padding: 0 8px;
+    font-size: 13px;
+    background: transparent;
+    flex: 1;
+}
+
+/* ICONS */
+.iwb-lookup-icons {
+    display: flex;
+    border-left: 1px solid #ddd;
+    align-items: center;
+}
+
+.iwb-icon-btn {
+    width: 22px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+}
+
+.iwb-icon-btn:hover {
+    background: #f5f5f5;
+}
+
+/* ADD BUTTON */
+.iwb-add-btn {
+    height: 24px;
+    width: 26px;
+    border: 1px solid transparent;
+    background: #fff;
+    color: #5cb85c;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #ddd;
+}
+
+.iwb-add-btn:hover {
+    background: #f7f7f7;
+}
+
+
+
+
+.iwb-clear-btn {
+    height: 24px;
+    width: 26px;
+    border: 1px solid transparent;
+    background: #fff;
+    color: #666666;
+    font-weight: 200;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    border-left: 1px solid #ddd;
+}
+
+.iwb-clear-btn:hover {
+    background: #f7f7f7;
+}
+
+
+.iwb-select-btn {
+    height: 24px;
+    width: 26px;
+    border: 1px solid transparent;
+    background: #fff;
+    color: #666666;
+    font-weight: 200;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    border-left: 1px solid #ddd;
+}
+
+.iwb-select-btn:hover {
+    background: #f7f7f7;
+}
+
+
+.has-lookup .iwb-add-btn,
+.iwb-clear-btn,
+.iwb-select-btn {
+    height: 23px;
+}
+
+
+
+
+
+//BUTON 
+.iwb-action-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* ===== BASE BUTTON ===== */
+.iwb-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 6px;
+}
+
+/* ===== ICON ===== */
+.iwb-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* ===== SAVE ===== */
+.iwb-btn-save .iwb-icon-save {
+    background: #6cc070;
+    /* iWorkBetter yeşili */
+}
+
+/* ===== CLOSE ===== */
+.iwb-btn-close .iwb-icon-close {
+    background: #f0ad4e;
+    /* iWorkBetter turuncusu */
+}
+
+/* ===== HOVER (çok hafif) ===== */
+.iwb-btn:hover {
+    opacity: 0.85;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .iwb-form-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .iwb-form-col {
+        max-width: 100%;
+    }
+
+    .iwb-row,
+    .iwb-row.has-accent {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
+
+
+
+    .iwb-label {
+        text-align: left;
+        margin-bottom: 4px;
+    }
+
+    .iwb-field-accent {
+        display: none;
+    }
+
+    .iwb-add-btn {
+        margin-top: 0px;
+    }
+}
+
+
+
+
+
+
+/* COLLAPSE ICON */
+.iwb-collapse-icon {
+    display: inline-block;
+    transition: transform .2s ease;
+}
+
+.iwb-page-header[aria-expanded="false"] .iwb-collapse-icon {
+    transform: rotate(-90deg);
+}
+
+
+
+
+
+
+
+
+.iwb-dropdown {
+    position: relative;
+}
+
+.iwb-dropdown-panel {
+    position: fixed;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: 1px solid #ddd !important;
+    border-top: none;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.iwb-dropdown-item {
+    padding: 6px 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.iwb-dropdown-item:hover {
+    background: #f5f5f5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//FORMDA KIRMIZI ÜNLEM İÇİN
+.iwb-row {
+  position: relative;
+}
+
+.iwb-field {
+  position: relative;
+}
+
+.iwb-error-icon {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #dc2626; // kırmızı
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.has-error input {
+  border-color: #dc2626;
+}

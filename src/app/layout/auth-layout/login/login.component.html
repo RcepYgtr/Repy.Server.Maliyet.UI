@@ -1,0 +1,78 @@
+
+
+
+<div class="container-fluid vh-100 d-flex p-0">
+    <div class="row flex-fill g-0">
+
+        <!-- SOL TARAF (Branding) -->
+        <div class="col-lg-6 d-none d-lg-flex auth-left">
+            <div class="brand-wrapper text-white">
+                <h1 class="fw-bold">YÜKSELİŞ ASANSÖR</h1>
+                <p class="mt-3">
+                    <!-- Kurumsal ERP & Üretim Yönetim Sistemi -->
+                </p>
+            </div>
+        </div>
+
+        <!-- SAĞ TARAF (Form Alanı) -->
+        <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center auth-right">
+            <div class="auth-card shadow-lg">
+
+
+                <!-- ROUTER -->
+
+                <h3 class="fw-bold mb-4 text-center">Giriş Yap</h3>
+
+                <form [formGroup]="form" (ngSubmit)="submit()">
+
+                    <div class="mb-3">
+                        <label class="form-label">Kullanıcı Adı</label>
+                        <input type="email" class="form-control" formControlName="username"
+                            placeholder="ornek@yukselis.com">
+                        <div class="text-danger small mt-1"
+                            *ngIf="form.get('username')?.touched && form.get('username')?.invalid">
+                            Kullanıcı adı veya e-posta zorunludur.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Şifre</label>
+                        <input type="password" class="form-control" formControlName="password" placeholder="••••••••">
+                        <div class="text-danger small mt-1"
+                            *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+                            Şifre zorunludur.
+                        </div>
+                    </div>
+
+                    <div class="d-grid mt-4">
+                        <button class="btn btn-primary" [disabled]="form.invalid || loading">
+                            <span *ngIf="!loading">Giriş Yap</span>
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm"></span>
+                        </button>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <!-- <a routerLink="/auth/register" class="text-decoration-none">
+                            Hesabın yok mu? Kayıt Ol
+                        </a> -->
+                    </div>
+
+                </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

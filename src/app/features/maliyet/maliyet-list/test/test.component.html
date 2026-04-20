@@ -1,0 +1,200 @@
+<!-- <div class="page">
+
+  <div class="models-grid">
+
+    <div *ngFor="let model of models" class="model-card">
+
+
+      <div class="model-header">
+        <h3>{{ model.modelName }}</h3>
+        <span>
+          {{ model.minCost | number }} – {{ model.maxCost | number }} ₺
+        </span>
+      </div>
+
+      <div class="card-grid">
+
+        <div *ngFor="let c of model.capacities"
+             class="cost-card"
+             (click)="openDetail(model.modelName, c)">
+
+          <div class="capacity">
+            {{ c.capacity }} kg
+          </div>
+
+          <div class="total">
+            {{ c.totalCost | number }}
+            <span>₺</span>
+          </div>
+
+          <div class="meta">
+
+            <div class="meta-item">
+              <span class="label">Malzeme</span>
+              <span class="val material">
+                {{ c.materialCost | number }}
+              </span>
+            </div>
+
+            <div class="meta-item">
+              <span class="label">İşçilik</span>
+              <span class="val labor">
+                {{ c.laborCost | number }}
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div> -->
+
+
+
+
+
+<div class="container-fluid dashboard">
+
+  <!-- KPI ROW -->
+  <!-- <div class="card kpi-card mb-3">
+    <div class="row align-items-end text-center">
+
+      <div class="col">
+        <label class="form-label small">Askı Tipi</label>
+        <select class="form-select form-select-sm" [(ngModel)]="filters.askiTipi" (change)="applyFilter()">
+          <option value="">Seçiniz</option>
+          <option *ngFor="let item of askiTipleri" [value]="item">
+            {{ item }}
+          </option>
+        </select>
+      </div>
+
+      <div class="col">
+        <label class="form-label small">Ray Arası</label>
+        <input type="number" class="form-control form-control-sm" [(ngModel)]="filters.rayArasi" (input)="applyFilter()"
+          placeholder="mm">
+      </div>
+
+      <div class="col">
+        <label class="form-label small">Kapasite</label>
+        <select class="form-select form-select-sm" [(ngModel)]="filters.kapasite" (change)="applyFilter()">
+          <option value="">Tümü</option>
+          <option *ngFor="let k of kapasiteList" [value]="k">
+            {{ k }} kg
+          </option>
+        </select>
+      </div>
+
+      <div class="col-auto">
+        <button class="btn btn-sm btn-outline-secondary" (click)="resetFilter()">
+          Temizle
+        </button>
+      </div>
+
+    </div>
+  </div> -->
+
+  <!-- ACCOUNT CARD -->
+  <div class="card account-card mb-3" *ngIf="account as acc">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+
+      <div>
+        <div class="account-title d-flex align-items-center gap-2">
+
+          <div class="dropdown">
+
+            <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+
+              {{ selectedModel?.model || 'Model seçiniz' }}
+
+            </button>
+
+            <ul class="dropdown-menu">
+
+              <li *ngFor="let item of models">
+                <button class="dropdown-item" (click)="selectModel(item)">
+                  {{ item.model }}
+                </button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <span class="badge bg-light text-dark" style="color: #670e0e !important;">
+            320KG
+          </span>
+
+        </div>
+      </div>
+
+      <div class="d-flex gap-4 metrics">
+
+        <div>
+          <div class="metric-label">Geçen Ay (₺)</div>
+          <div class="metric-value">{{ acc.prev | number }}</div>
+        </div>
+
+        <div>
+          <div class="metric-label">Bu ay</div>
+          <div class="metric-value">
+            {{ acc.current | number }}
+            <span class="text-success small">(+17.5%)</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="metric-label">Gelecek Ay (Tahmini)</div>
+          <div class="metric-value">
+            {{ acc.forecast | number }}
+            <span class="text-danger small">(+1.8%)</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BODY -->
+    <div class="row">
+
+      <!-- CHART -->
+      <div class="col-md-6">
+        <canvas baseChart [data]="acc.chartData"></canvas>
+      </div>
+      <!-- TABLE -->
+      <div class="col-md-6">
+        <table class="table table-bordered small mb-0">
+          <thead>
+            <tr>
+              <th>Kapasite</th>
+              <th>Toplam Maliyet</th>
+              <th>Malzeme</th>
+              <th>İşçilik</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let item of acc.capacities">
+              <td>{{ item.capasite }} kg</td>
+              <td>{{ item.total | number }} ₺</td>
+              <td class="text-success">{{ item.material | number }}</td>
+              <td class="text-primary">{{ item.labor | number }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,309 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'confirm-modal';
+@use 'ag-grid-table';
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+
+
+.toast-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  min-width: 340px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.toast-card .icon {
+  font-size: 22px;
+}
+
+.toast-card .title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.toast-card .message {
+  font-size: 13px;
+  opacity: .8;
+}
+
+.toast-card .close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.toast-card .progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  animation: toast-progress 3s linear forwards;
+}
+
+@keyframes toast-progress {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}
+
+
+
+
+.toast-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  gap: 10px;
+
+  &.toast-success {
+    background: #ecfeff;
+    border-left: 6px solid #06b6d4;
+  }
+
+  &.toast-error {
+    background: #fef2f2;
+    border-left: 6px solid #dc2626;
+  }
+
+  .title {
+    font-weight: 600;
+  }
+
+  .message {
+    font-size: 13px;
+  }
+
+  .close {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+  /* ===============================
+   ngx-toastr FULL RESET
+   =============================== */
+
+  /* Container */
+  #toast-container {
+    pointer-events: none;
+  }
+
+  /* Asıl toast kutusu */
+  #toast-container>div,
+  .ngx-toastr {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Default dark/light theme’i öldür */
+  .toast-message,
+  .toast-title {
+    color: inherit !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Tüm type’lar */
+  .toast-success,
+  .toast-error,
+  .toast-info,
+  .toast-warning {
+    background: transparent !important;
+  }
+
+
+
+
+
+
+
+
+  .toast-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #ffffff;
+    color: #111;
+    border-radius: 8px;
+    padding: 14px 16px;
+    min-width: 320px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .toast-wrapper .icon {
+    color: #22c55e;
+    font-size: 20px;
+  }
+
+  .toast-wrapper .title {
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .toast-wrapper .message {
+    font-size: 13px;
+    opacity: .85;
+  }
+
+  .toast-wrapper .close {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+
+}
+
+
+
+
+
+/* Toast container pozisyonu */
+.toast-bottom-right {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+}
+
+.toast-bottom-left {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 9999;
+}
+
+.toast-top-right {
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  z-index: 9999;
+}
+
+.toast-top-left {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 9999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.toast-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toast-card .icon {
+  font-size: 22px;
+  /* 🔥 */
+  width: 32px;
+  text-align: center;
+}
+
+.toast-card .content {
+  flex: 1;
+}
+
+.toast-card .title {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.toast-card .message {
+  font-size: 12px;
+  opacity: .9;
+}
+
+.toast-card .progress {
+  height: 3px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+
+
+
+
+//ag-griddeki hücrenin rengi ve inputun radius unu kapatma
+.cell-error {
+  background-color: #ca8383 !important;
+  border: 1px solid #e5cece;
+  color: white;
+}
+
+.cell-warning {
+  background: #fff7e6 !important;
+  border: 1px solid #faad14;
+}
+
+.cell-info {
+  background-color: #befdf3 !important;
+  // border: 1px solid #1677ff;
+}
+
+.ag-cell-inline-editing {
+  border-radius: 0;
+  border: 0;
+}
+
+.ag-input-field-input:where(input:not([type]), input[type=text], input[type=number], input[type=tel], input[type=date], input[type=datetime-local], textarea) {
+  border-radius: 0;
+  border: 0;
+}

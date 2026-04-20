@@ -1,0 +1,1 @@
+import{E as t,P as o}from"./chunk-NC72B4HU.js";var r=class a{sidebarOpen=o(!0);toggleSidebar(){this.sidebarOpen.update(e=>!e)}setSidebar(e){this.sidebarOpen.set(e)}static \u0275fac=function(i){return new(i||a)};static \u0275prov=t({token:a,factory:a.\u0275fac,providedIn:"root"})};export{r as a};

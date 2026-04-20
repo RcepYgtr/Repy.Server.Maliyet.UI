@@ -1,0 +1,81 @@
+<div class="iwb-page-actions m-2">
+
+    <button class="iwb-btn iwb-btn-save" (click)="Kaydet()">
+        <span class="iwb-icon iwb-icon-save">✔</span> Kaydet
+    </button>
+    <button class="iwb-btn iwb-btn-close" (click)="Kapat()">
+        <span class="iwb-icon iwb-icon-close">✖</span> Kapat
+    </button>
+</div>
+
+
+<div class="iwb-layout" style="height: calc(100vh - 225px);">
+
+
+
+    <div class="iwb-top ">
+
+
+    </div>
+
+
+
+
+    <div class="iwb-middle">
+
+
+
+
+
+        <div class="detay-container">
+
+            <div class="activity-panel" style="width: 40%;">
+
+                <div class="panel-title">
+                    <i class="fa fa-clock-rotate-left"></i>
+                    <!-- Sipariş İçeriği -->
+                </div>
+
+                <div class="timeline">
+
+
+                    <form [formGroup]="form">
+                        <div>
+
+                            <base-input formControlName="name" label="Rol Adı" hasAccent [grid]="4"
+                                ></base-input>
+                            
+
+
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- <div class="activity-panel" style="width: 30%;">
+
+                <div class="panel-title">
+                    <i class="fa fa-clock-rotate-left"></i>
+                  
+                </div>
+
+
+
+            </div> -->
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+</div>

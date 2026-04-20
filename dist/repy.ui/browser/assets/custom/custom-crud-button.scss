@@ -1,0 +1,50 @@
+:host ::ng-deep {
+  .yks_cpanel_top_right table.yks_table_group tr.table_row_group{
+    height: 100% !important;
+}
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    width: 90px;
+    height: 30px;
+  }
+  .ag-cell-label-container {
+
+    padding: 0px 0px;
+}
+  .mat-mdc-icon-button .mat-mdc-button-touch-target {
+    width: 90px !important;
+    height: 30px !important;
+  }
+
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .material-icons {
+    font-weight: 700;
+  }
+
+  .mat-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mat-mdc-icon-button .mat-mdc-button-persistent-ripple {
+    border-radius: 0;
+  }
+
+  .ag-theme-quartz,
+  .ag-theme-quartz-dark {
+
+    --ag-odd-row-background-color: rgb(0, 0, 0, 0.07);
+  }
+
+  .ag-header-cell-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,43 @@
+
+
+<base-toolbar [toolbar]="host.headerToolbar()" [toolbarState]="_bomToolbarStateService.ctx">
+</base-toolbar>
+<form [formGroup]="form">
+
+    <div class="door-category-group p-1">
+        <!-- <label class="group-label">Kapı Tipi</label> -->
+
+        <div class="radio-group">
+            <label class="radio-card">
+                <input type="radio" formControlName="doorCategory" [value]="1" />
+                <span class="radio-content">
+                    <span class="title">Kat Kapısı</span>
+                    <span class="desc">Kat girişlerinde kullanılan kapı</span>
+                </span>
+            </label>
+
+            <label class="radio-card">
+                <input type="radio" formControlName="doorCategory" [value]="2" />
+                <span class="radio-content">
+                    <span class="title">Kabin Kapısı</span>
+                    <span class="desc">Asansör kabini iç kapısı</span>
+                </span>
+            </label>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+<ag-grid-angular style="height:100%;" class="ag-theme-quartz" [rowData]="rowData" (gridReady)="getList($event)"
+    [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }" [rowHeight]="22"
+    [headerHeight]="30" (rowClicked)="onRowClicked($event)" (rowDoubleClicked)="onRowDoubleClick($event)"
+    [gridOptions]="gridOptions">
+</ag-grid-angular>
+
+<div class="erp-table-loader" *ngIf="isLoading">
+    <div class="erp-spinner"></div>
+    <div class="erp-loader-text">Yükleniyor...</div>
+</div>

@@ -1,0 +1,67 @@
+<div class="iwb-layout">
+
+    <div style="background: linear-gradient(90deg, #6db0c9, #0f7ba5);">
+        <app-sidebar></app-sidebar>
+
+    </div>
+
+
+    <main class="iwb-main">
+
+        <!-- <header class="iwb-topbar">
+            Bildirimler (12) · E-Posta · Onaylayacaklarım
+        </header> -->
+
+        <header class="iwb-topbar">
+
+            <div class="topbar-left">
+                Bildirimler (12) · E-Posta · Onaylayacaklarım
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="user-info">
+                    <div class="user-text">
+                        <div class="user-name">   {{ fullName() }}</div>
+                        <div class="user-role">   Merkez</div>
+                    </div>
+
+                    <div class="user-avatar">
+                        <img src="https://i.pravatar.cc/40" />
+                    </div>
+                </div>
+
+                <div class="topbar-icons">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <i class="fa-solid fa-arrow-right-from-bracket"  (click)="logout()"></i>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="iwb-tabbar">
+            <div class="iwb-tab" *ngFor="let tab of tabService.tabs()"
+                [class.active]="tab.id === tabService.activeTabId()" [class.iwb-tab-home]="!tab.closable"
+                (click)="activate(tab)">
+
+                <span class="iwb-tab-home-icon" *ngIf="!tab.closable">
+                    <i class="fa-solid fa-house-circle-check"></i>
+                </span>
+
+                {{ tab.title }}
+
+                <span class="iwb-tab-close" *ngIf="tab.closable" (click)="close(tab, $event)">
+                    ×
+                </span>
+
+            </div>
+        </div>
+
+        <section class="iwb-content">
+            <router-outlet></router-outlet>
+        </section>
+
+    </main>
+</div>

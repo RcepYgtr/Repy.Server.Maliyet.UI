@@ -1,0 +1,69 @@
+<div class="iwb-layout">
+
+
+    <!-- 🔼 ÜST (COLLAPSABLE) -->
+    <div class="iwb-top ">
+
+
+        <ul class="nav iwb-tabs">
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'KABIN'" (click)="onTabChanged('KABIN')">
+                    Kabin
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'BUTON'" (click)="onTabChanged('BUTON')">
+                    Buton
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'SUSPANSIYON'"
+                    (click)="onTabChanged('SUSPANSIYON')">
+                    Süspansiyon
+                </button>
+            </li>
+            <!-- <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'LKARKAS'" (click)="onTabChanged('LKARKAS')">
+                    LKarkas  
+                </button>
+            </li> -->
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'AGIRLIKSASESI'"
+                    (click)="onTabChanged('AGIRLIKSASESI')">
+                    Ağırlık Şasesi
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'MAKINESASESI'"
+                    (click)="onTabChanged('MAKINESASESI')">
+                    Makine Şasesi
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'KAPI'" (click)="onTabChanged('KAPI')">
+                    Kapı
+                </button>
+            </li>
+        </ul>
+
+    </div>
+
+
+
+
+
+    <div class="iwb-middle">
+        <div class="erp-table-wrapper">
+            <app-kabin-bom *ngIf="activeTab === 'KABIN'"></app-kabin-bom>
+            <app-suspansiyon-bom *ngIf="activeTab === 'SUSPANSIYON'"></app-suspansiyon-bom>
+            <app-makine-sasesi-bom *ngIf="activeTab === 'MAKINESASESI'"></app-makine-sasesi-bom>
+            <app-agirlik-sasesi-bom *ngIf="activeTab === 'AGIRLIKSASESI'"></app-agirlik-sasesi-bom>
+            <app-kapi-bom *ngIf="activeTab === 'KAPI'"></app-kapi-bom>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,30 @@
+
+    <base-toolbar [toolbar]="host.headerToolbar()" [toolbarState]="_LaborToolbarStateService.ctx">
+    </base-toolbar>
+    <ag-grid-angular style="height:calc(100% - 100px);" class="ag-theme-quartz" [rowData]="rowData" (gridReady)="getList($event)"
+        [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }" [rowHeight]="22"
+        [headerHeight]="30" (rowClicked)="onRowClicked($event)" (rowDoubleClicked)="onRowDoubleClick($event)"
+        [gridOptions]="gridOptions">
+    </ag-grid-angular>
+
+    <div class="erp-table-loader" *ngIf="isLoading">
+        <div class="erp-spinner"></div>
+        <div class="erp-loader-text">Yükleniyor...</div>
+    </div>
+
+
+    <!-- {
+
+
+        grupAdi:'DKP SAC',
+        items:[
+        {stockId:1},
+        {stockId:2},
+        {stockId:3},
+        ]
+    } böyle bir request i API ye gönderdiğimde bu stokId lere sabip tüm stoklara bu grupAdi verilsin.
+      yapmak istediğim şey şu ben bomda veya maliyet ekranında kullanılan bir stoğun birim fiyatını değiştirirsem 
+      eğer bu gruba ait tüm birim fiyatlar değişsin istiyorum yada stok güncellerken bu gruba ait tüm stokların birim fiyatı aynı olmalı
+      
+     
+    -->

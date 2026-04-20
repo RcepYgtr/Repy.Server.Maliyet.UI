@@ -1,0 +1,200 @@
+@use "form";
+@use "action-toolbar";
+@use "tab";
+@use "ag-grid-table";
+@use "loader";
+
+
+
+/* 🌍 ANA LAYOUT */
+.iwb-layout {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 85px);
+}
+
+/* 🔼 ÜST & 🔽 ALT SABİT */
+.iwb-top,
+.iwb-bottom {
+  flex-shrink: 0;
+}
+
+/* 🔥 ORTA HER ZAMAN KALANI ALIR */
+.iwb-middle {
+  flex: 1;
+  min-height: 0;
+  /* AG-GRID kuralı */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* GRID TAM DOLDURSUN */
+.iwb-middle base-grid,
+.iwb-middle ag-grid-angular {
+  flex: 1;
+  min-height: 0;
+}
+
+/* FORM SCROLL */
+.iwb-form-container {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* ALT TAB CONTENT */
+.iwb-tab-content {
+  height: 200px;
+}
+
+
+
+:host ::ng-deep {
+
+  .tag {
+    padding: 2px 4px;
+    border-radius: 14px;
+    font-size: 10px;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  /* çizim yapılmadı */
+  .tag-cizilmedi {
+    background: #e9ecef;
+    color: #495057;
+  }
+
+  /* iptal */
+  .tag-iptal {
+    background: #f8d7da;
+    color: #842029;
+  }
+
+  /* üretimde */
+  .tag-imalat {
+    background: #cff4fc;
+    color: #0cc8ee;
+  }
+
+  /* hazır */
+  .tag-hazir {
+    background: #d1e7dd;
+    color: #0f5132;
+  }
+
+  /* ambalaj */
+  .tag-ambalaj {
+    background: #fff3cd;
+    color: #664d03;
+  }
+
+  /* bekleme */
+  .tag-bekleme {
+    // background:#f5c2c7;
+    // color:#842029;
+    background: #fff3cd;
+    color: #856404;
+  }
+
+  /* sevk edildi */
+  .tag-gitti {
+    background: #d3d3d4;
+    color: #41464b;
+  }
+
+  .tag-done {
+     background: #a0e9c9;
+    color: #00c271;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.role-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-left: 1px solid #e5e7eb;
+  background: #fafafa;
+}
+
+.role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.role-header .title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.role-user {
+  padding: 10px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.user-name {
+  font-weight: 600;
+}
+
+.user-email {
+  font-size: 12px;
+  color: #888;
+}
+
+.role-list {
+  flex: 1;
+  overflow: auto;
+  padding: 10px;
+}
+
+.role-item {
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.role-item:hover {
+  background: #f1f5f9;
+}
+
+.role-item.active {
+  background: #e0f2fe;
+}
+
+.role-item label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.role-name {
+  font-size: 14px;
+}
+
+.empty {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+}

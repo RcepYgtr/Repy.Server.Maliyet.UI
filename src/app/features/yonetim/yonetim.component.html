@@ -1,0 +1,45 @@
+<div class="iwb-layout">
+
+
+    <!-- 🔼 ÜST (COLLAPSABLE) -->
+    <div class="iwb-top ">
+
+
+        <ul class="nav iwb-tabs">
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'USER'" (click)="onTabChanged('USER')">
+                    Kullanıcılar
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'ROLE'" (click)="onTabChanged('ROLE')">
+                    Roller
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'PERMISSION'"
+                    (click)="onTabChanged('PERMISSION')">
+                    İzinler
+                </button>
+            </li>
+           
+        </ul>
+
+    </div>
+
+
+
+
+    <div class="iwb-middle">
+        <div class="erp-table-wrapper">
+            <app-user *ngIf="activeTab === 'USER'"></app-user>
+            <app-role *ngIf="activeTab === 'ROLE'"></app-role>
+            <app-permission *ngIf="activeTab === 'PERMISSION'"></app-permission>
+        </div>
+
+    </div>
+
+
+</div>

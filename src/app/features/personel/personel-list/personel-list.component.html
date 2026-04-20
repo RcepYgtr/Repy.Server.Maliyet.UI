@@ -1,0 +1,31 @@
+<div class="iwb-layout">
+
+
+
+    <!-- 🔥 ORTA (HER ZAMAN KALANI ALIR) -->
+    <div class="iwb-middle">
+        
+        <base-toolbar [toolbar]="host.headerToolbar()" [toolbarState]="_PersonelToolbarStateService.ctx">
+        </base-toolbar>
+
+        <div class="erp-table-wrapper">
+
+
+            <ag-grid-angular style="height:100%;" class="ag-theme-quartz" [rowData]="rowData"
+                (gridReady)="getList($event)"
+                [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }"
+                [rowHeight]="22" [headerHeight]="30" (rowClicked)="onRowClicked($event)"
+                (rowDoubleClicked)="onRowDoubleClick($event)" [gridOptions]="gridOptions">
+            </ag-grid-angular>
+
+            <div class="erp-table-loader" *ngIf="isLoading">
+                <div class="erp-spinner"></div>
+                <div class="erp-loader-text">Yükleniyor...</div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>

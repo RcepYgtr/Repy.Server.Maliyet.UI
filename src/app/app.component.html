@@ -1,0 +1,68 @@
+<!-- <global-loader></global-loader>
+
+<div class="iwb-layout">
+
+  <div style="background: linear-gradient(90deg, #6db0c9, #0f7ba5);">
+    <app-sidebar></app-sidebar>
+  </div>
+
+
+  <main class="iwb-main">
+
+    <header class="iwb-topbar">
+      Eğitimler (12) · Bildirimler · E-Posta · Onaylayacaklarım
+    </header>
+
+
+    <div class="iwb-tabbar">
+      <div
+        class="iwb-tab"
+        *ngFor="let tab of tabService.tabs()"
+        [class.active]="tab.id === tabService.activeTabId()"
+        [class.iwb-tab-home]="!tab.closable"
+        (click)="activate(tab)"
+      >
+
+        <span
+          class="iwb-tab-home-icon"
+          *ngIf="!tab.closable"
+        >
+          <i class="fa-solid fa-house-circle-check"></i>
+        </span>
+
+        {{ tab.title }}
+
+        <span
+          class="iwb-tab-close"
+          *ngIf="tab.closable"
+          (click)="close(tab, $event)"
+        >
+          ×
+        </span>
+
+      </div>
+    </div>
+
+    <section class="iwb-content">
+      <router-outlet></router-outlet>
+    </section>
+
+  </main>
+</div>
+
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+  <router-outlet></router-outlet>

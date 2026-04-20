@@ -1,0 +1,63 @@
+<base-toolbar [toolbar]="host.headerToolbar()" [toolbarState]="_yonetimToolbarStateService.ctx">
+</base-toolbar>
+
+
+<div style="display: grid; grid-template-columns: 500px 500px; height: 100%;">
+
+    <ag-grid-angular style="height:100%; width: 500px;" class="ag-theme-quartz" [rowData]="rowData"
+        (gridReady)="getList($event)"
+        [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }" [rowHeight]="22"
+        [headerHeight]="30" (rowClicked)="onRowClicked($event)" (rowDoubleClicked)="onRowDoubleClick($event)"
+        [gridOptions]="gridOptions">
+    </ag-grid-angular>
+
+    <div class="role-panel">
+
+    
+        <div class="role-header">
+            <div class="title">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>Rol Yönetimi</span>
+            </div>
+
+            <button class="iwb-btn iwb-btn-save" (click)="Kaydet()">
+                ✔ Kaydet
+            </button>
+        </div>
+
+        <div class="role-user" *ngIf="selectedItem">
+            <div class="user-name">{{ selectedItem.userName }}</div>
+            <div class="user-email">{{ selectedItem.email }}</div>
+        </div>
+
+
+        <div class="empty" *ngIf="!selectedItem">
+            Kullanıcı seçiniz
+        </div>
+
+
+        <div class="role-list" *ngIf="selectedItem">
+
+            <div class="role-item" *ngFor="let role of roles" [class.active]="isChecked(role.name)">
+
+                <label>
+                    <input type="checkbox" [checked]="isChecked(role.name)" (change)="toggleRole(role.name)" />
+
+                    <span class="role-name">{{ role.name }}</span>
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<div class="erp-table-loader" *ngIf="isLoading">
+    <div class="erp-spinner"></div>
+    <div class="erp-loader-text">Yükleniyor...</div>
+</div>

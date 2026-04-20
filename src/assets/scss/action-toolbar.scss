@@ -1,0 +1,185 @@
+
+.dropdown-toggle::after {
+    display: inline-block;
+    vertical-align: .255em;
+    padding: 0;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    color: gray;
+    font-size: 11px;
+}
+
+
+.iwb-tbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.iwb-tbtn img {
+  width: 16px;
+  height: 16px;
+}
+
+.iwb-tbtn-label {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.iwb-tbtn:not(:has(.iwb-tbtn-label)) {
+  padding: 4px;
+}
+.iwb-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // 👈 kritik
+  width: 100%;
+}
+
+
+.iwb-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  background: #eef1f4;
+  // border-bottom: 1px solid #d6d6d6;
+}
+
+/* TOOL BUTTON */
+.iwb-tbtn {
+  // width: 26px;
+  height: 26px;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iwb-tbtn img {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+/* HOVER */
+.iwb-tbtn:hover {
+  background: #ffffff;
+  border-color: #cfcfcf;
+}
+
+/* PAGE INFO */
+.iwb-page {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 6px;
+  font-size: 13px;
+  color: #444;
+}
+
+.iwb-page input {
+  width: 64px;
+  height: 22px;
+  font-size: 13px;
+  text-align: left;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 0 9px;
+  box-shadow: none;
+}
+
+.iwb-page input:focus {
+  border: 0;
+}
+
+/* SEPARATOR */
+.iwb-sep {
+  width: 1px;
+  height: 18px;
+  background: #cfcfcf;
+  margin: 0 6px;
+}
+
+
+
+.iwb-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+/* SOL GRUP */
+.iwb-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* SAĞ AYARLAR */
+.iwb-toolbar-right {
+  margin-left: auto;
+  /* 🔥 burası olayı çözer */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Ayarlar özel hover */
+.iwb-tbtn.settings:hover {
+  background: #e9f2ff;
+  border-color: #9ec5fe;
+}
+
+
+
+/* Ayarlar butonu */
+.iwb-tbtn.settings {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 0px;
+}
+
+/* Down arrow */
+.iwb-caret {
+  width: 10px;
+  height: 10px;
+  opacity: 0.6;
+}
+
+/* Bootstrap default oku kapat */
+.iwb-tbtn.settings::after {
+  display: none !important;
+}
+
+/* Dropdown menu */
+.iwb-settings-menu {
+  font-size: 13px;
+  min-width: 180px;
+  border-radius: 4px;
+}
+
+/* Hover */
+.iwb-settings-menu .dropdown-item:hover {
+  background: #f2f2f2;
+}
+
+.down-icon {
+  position: absolute;
+  right: 0px;
+  top: 7px;
+  font-size: 12px;
+}
+
+
+.dropdown-btn {
+  position: relative;
+  justify-content: flex-start;
+  width: 100%;
+}

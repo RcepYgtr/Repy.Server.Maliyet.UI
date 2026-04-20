@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h5 class="modal-title">Stok Seç</h5>
+  <button type="button" class="btn-close" (click)="cancel()"></button>
+</div>
+
+<div class="modal-body">
+
+
+  <!-- GRID -->
+  <!-- <ag-grid-angular
+    class="ag-theme-quartz"
+    style="height: 400px;"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    rowSelection="multiple"
+    (gridReady)="onGridReady($event)"
+    (selectionChanged)="onSelectionChanged()">
+  </ag-grid-angular> -->
+
+
+  <ag-grid-angular style="height:400px;" class="ag-theme-quartz" [rowData]="rowData" [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)" [rowSelection]="{
+  mode: 'multiRow',
+  enableClickSelection: true
+}" [rowHeight]="22" [headerHeight]="30" (selectionChanged)="onSelectionChanged()">
+  </ag-grid-angular>
+
+
+
+  <div class="mt-1 small text-muted">
+    💡 Birden fazla seçim için <b style="color: rgb(112, 0, 0);">CTRL</b> , iki seçim arasını seçmek için <b
+      style="color: rgb(112, 0, 0);">CTRL + SHIFT</b> tuşunu kullanın
+  </div>
+
+
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="cancel()">İptal</button>
+  <button class="btn btn-primary" (click)="confirm()">
+    Seç ({{ selectedRows.length }})
+  </button>
+</div>

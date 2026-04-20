@@ -1,0 +1,303 @@
+//FORM ROOT
+.iwb-form {
+    background: #fff;
+    padding: 16px;
+}
+
+
+//ROW – ANA TAŞIYICI
+.iwb-row {
+    display: grid;
+    grid-template-columns: 140px repeat(10, 1fr);
+    align-items: center;
+    column-gap: 8px;
+    margin-bottom: 6px;
+    position: relative;
+}
+
+//LABEL
+.iwb-label {
+    grid-column: 1;
+    font-size: 13px;
+    color: #555;
+    text-align: right;
+    padding-right: 6px;
+}
+
+//FIELD (GENEL KAPSAYICI)
+.iwb-field {
+    grid-column: span 10;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+
+//GRID SİSTEMİ (10’luk)
+.iwb-span-1 {
+    grid-column: span 1;
+}
+
+.iwb-span-2 {
+    grid-column: span 2;
+}
+
+.iwb-span-3 {
+    grid-column: span 3;
+}
+
+.iwb-span-4 {
+    grid-column: span 4;
+}
+
+.iwb-span-5 {
+    grid-column: span 5;
+}
+
+.iwb-span-6 {
+    grid-column: span 6;
+}
+
+.iwb-span-7 {
+    grid-column: span 7;
+}
+
+.iwb-span-8 {
+    grid-column: span 8;
+}
+
+.iwb-span-9 {
+    grid-column: span 9;
+}
+
+.iwb-span-10 {
+    grid-column: span 10;
+}
+
+
+//INPUT – TEK STİL
+.iwb-input {
+    width: 100%;
+    height: 26px;
+    font-size: 13px;
+    padding: 0 8px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+}
+
+.iwb-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+
+//LOOKUP / DROPDOWN
+.iwb-lookup {
+    display: flex;
+    width: 100%;
+    height: 26px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+}
+
+
+
+
+
+
+
+
+
+//DROPDOWN PANEL
+.iwb-dropdown-panel {
+    position: fixed;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 9999;
+}
+
+.iwb-dropdown-item {
+    padding: 6px 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.iwb-dropdown-item:hover {
+    background: #f3f4f6;
+}
+
+
+
+//ACCENT (OPSİYONEL)
+.iwb-row.has-accent::before {
+content: "";
+    position: absolute;
+    left: 144px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #d9534f;
+}
+
+
+//LOOKUP 
+.iwb-row.has-lookup .iwb-lookup {
+    display: flex;
+    align-items: center;
+    height: 26px;
+    background: #fff;
+    border-top: 2px solid #f0ad4e;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+
+//🔴 ERROR SİSTEMİ
+.iwb-row.has-error .iwb-input,
+.iwb-row.has-error .iwb-lookup {
+    border-color: #d9534f;
+}
+
+.iwb-error-icon {
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #dc2626;
+    font-weight: bold;
+}
+
+//DISABLED
+.iwb-row.is-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+
+//RESPONSIVE (ZORUNLU)
+@media (max-width: 768px) {
+    .iwb-row {
+        grid-template-columns: 1fr;
+    }
+
+    .iwb-label {
+        text-align: left;
+        margin-bottom: 4px;
+    }
+
+    .iwb-field {
+        grid-column: span 1 !important;
+    }
+
+    .iwb-row.has-accent::before {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== DROPDOWN ROOT ===== */
+.iwb-dropdown {
+    position: relative;
+    width: 100%;
+    min-width: 170px;
+}
+
+/* ===== LOOKUP BOX ===== */
+
+
+
+
+/* ===== INPUT ===== */
+.iwb-lookup-input {
+    border: none;
+    padding: 0 8px;
+    font-size: 13px;
+    background: transparent;
+    cursor: pointer;
+    flex: 1 1 0%;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.iwb-lookup-input:focus {
+    outline: none;
+}
+
+/* ===== ACTIONS ===== */
+.iwb-lookup-actions {
+    display: flex;
+    //   border-left: 1px solid #e5e7eb;
+}
+
+.iwb-icon-btn {
+    width: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #555;
+    border-left: 1px solid #ddd;
+}
+
+.iwb-icon-btn:hover {
+    background: #f3f4f6;
+}
+
+.iwb-add-btn{
+    color: green;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ===== DROPDOWN PANEL ===== */
+.iwb-dropdown-panel {
+    position: fixed;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 9999;
+}
+
+.iwb-dropdown-item {
+    padding: 6px 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.iwb-dropdown-item:hover {
+    background: #f3f4f6;
+}

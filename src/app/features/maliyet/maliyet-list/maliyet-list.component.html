@@ -1,0 +1,68 @@
+<div class="iwb-layout">
+
+
+    <!-- 🔼 ÜST (COLLAPSABLE) -->
+    <div class="iwb-top ">
+
+
+        <ul class="nav iwb-tabs">
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'KABIN'" (click)="onTabChanged('KABIN')">
+                    Kabin Maliyeti
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'BUTON'" (click)="onTabChanged('BUTON')">
+                    Buton Maliyeti
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'SUSPANSIYON'"
+                    (click)="onTabChanged('SUSPANSIYON')">
+                    Süspansiyon Maliyeti
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'LKARKAS'" (click)="onTabChanged('LKARKAS')">
+                    LKarkas Maliyeti
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'AGIRLIKSASESI'" (click)="onTabChanged('AGIRLIKSASESI')">
+                    Ağırlık Maliyeti
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'MAKINESASESI'" (click)="onTabChanged('MAKINESASESI')">
+                    Makine Maliyeti
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'KAPI'" (click)="onTabChanged('KAPI')">
+                    Kapı Maliyeti
+                </button>
+            </li>
+        </ul>
+
+    </div>
+
+
+
+
+
+    <div class="iwb-middle">
+        <div class="erp-table-wrapper">
+             <!-- <app-kabin-maliyet *ngIf="activeTab === 'KABIN'"></app-kabin-maliyet> -->
+              <app-suspansiyon-maliyet *ngIf="activeTab === 'SUSPANSIYON'"></app-suspansiyon-maliyet> 
+             <app-makine-sasesi-maliyet *ngIf="activeTab === 'MAKINESASESI'"></app-makine-sasesi-maliyet>
+             <app-agirlik-sasesi-maliyet *ngIf="activeTab === 'AGIRLIKSASESI'"></app-agirlik-sasesi-maliyet>
+             <app-kapi-maliyet *ngIf="activeTab === 'KAPI'"></app-kapi-maliyet>
+              <app-test *ngIf="activeTab === 'KABIN'"></app-test>  
+        </div>
+
+    </div>
+
+
+</div>

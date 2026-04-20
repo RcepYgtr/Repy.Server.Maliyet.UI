@@ -1,0 +1,205 @@
+@import "src/assets/custom/custom-list-page";
+
+.form-control-nullable{
+    padding: 0 2.25rem 0 0.75rem !important;
+    font-size: 13px !important;
+    background-color: rgb(247 247 247) !important;
+    border-radius: 4px !important;
+    border: 1px solid rgb(219 219 219) !important;
+}
+.form-control-required{
+    padding: 0px 0 0px 0.75rem;
+    font-size: 13px;
+    border-radius: 4px;
+    background-color: rgb(210, 210, 255) !important;
+    border: 1px solid rgb(145, 145, 243);
+}
+
+.o_inner_group.o_group_col_6{
+
+    display: inline-table;
+}
+
+
+.form-select{
+    padding: 0 2.25rem 0 0.75rem;
+    font-size: 13px;
+    height: 100%;
+    background-color: rgb(210, 210, 255);
+    border-radius: 4px;
+    border: 1px solid  rgb(145, 145, 243);
+}
+.form-select:focus{
+  border: 1px solid #017e84;
+}
+.form-control:focus{
+    border: 1px solid #017e84;
+}
+
+
+:host ::ng-deep{
+    .yks_cpanel_top_right table.yks_table_group tr.table_row_group{
+        height: 100% !important;
+    }
+    .ag-cell-label-container {
+
+        padding: 0px 0px;
+    }
+    .form-title{
+        border-bottom: 1px solid #ddd;
+        font-size: 12px;
+        font-style: italic;
+        color: rgb(99, 99, 99);
+        box-shadow: #ddd 3.2px 3.2px 8px 0px inset, rgb(255, 255, 255) -3.2px -3.2px 8px 0px inset;
+    }
+    .ag-theme-quartz, .ag-theme-quartz-dark {
+
+        --ag-odd-row-background-color: rgb(0, 0, 0, 0.07);
+    }
+    .ag-header-cell-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 12px;
+    }
+    a.title-router{
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        color: #66598f !important;
+      }
+    table.yks_table_group tr.table_row_group{
+        height: 40px !important;
+    }
+
+     .yks_td_label + td {
+        padding: 0px 6px 0px 8px;
+    }
+
+    .yks_td_label{
+        width: 0%;
+        padding: 0 15px 0 0;
+        // min-width: 150px;
+        min-width: 60px;
+        color: #212529;
+        border-right: 1px solid #ddd;
+    }
+
+
+    .nav-tabs .nav-link{
+        color: #66598f;
+        padding: 6px 12px;
+        font-size: 13px;
+        
+    }
+    .nav-tabs .nav-link.active{
+        color: rgb(63, 63, 63);
+    }
+
+
+     .yks_button_box {
+        position: relative;
+        display: inline-flex;
+        text-align: right;
+        box-shadow: inset 0 -1px 0 #dee2e6;
+        width: 40%;
+         .btn.yks_stat_button {
+            color: #666666;
+            height: 44px;
+            padding: 0 6px 0 0 !important;
+            text-align: left;
+            white-space: nowrap;
+            background-color: transparent;
+            opacity: 0.8;
+            border-radius: 0px;
+            margin-bottom: 0;
+            width: 100%;
+            border: 1px solid #dee2e6;
+
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.06);
+            }
+
+
+        .yks_title_value{
+            font-size: 13px;
+        }
+
+              & > .yks_button_icon {
+                margin-left: 6px;
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 44px;
+                width: 15%;
+
+            }
+            
+             .yks_button_icon {
+                color: #7C7BAD;
+            }
+            .yks_button_icon {
+                margin-right: 5px;
+            }
+
+            &> .yks_stat_info{
+                display: inline-block;
+                vertical-align: middle;
+                font-weight: 400;
+                max-width: 70%;
+                padding-right: 6px;
+                line-height: 1.3;
+            }
+
+              &> .yks_stat_info .yks_stat_value {
+                  font-weight: 700;
+                  color: #714B67;
+              }
+
+
+              &> .yks_stat_info > .yks_stat_value {
+                display: block;
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+     
+                line-height: 1.2;
+            }
+
+        }
+
+
+
+        .btn .yks_field_widget {
+            margin-bottom: 0;
+        }
+
+        .yks_field_widget {
+            
+            text-align: inherit;
+        }
+
+          .yks_button_box.yks_not_full .yks_stat_button {
+            border-left-width: 1px;
+        }
+        
+          .yks_button_box .yks_stat_button{
+            border: 0 solid #dee2e6;
+        }
+
+        .fa{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .fa-fw{
+            text-align: center;
+        }
+
+    }
+    .yks-hint {
+        position: relative;
+        caret-color: rgb(55, 53, 47);
+    }
+
+
+
+}
+

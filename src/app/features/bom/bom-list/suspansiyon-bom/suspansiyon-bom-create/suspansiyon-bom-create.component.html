@@ -1,0 +1,81 @@
+<div class="iwb-page-actions m-2">
+
+    <button class="iwb-btn iwb-btn-save" (click)="Kaydet()">
+        <span class="iwb-icon iwb-icon-save">✔</span> Kaydet
+    </button>
+    <button class="iwb-btn iwb-btn-close" (click)="Kapat()">
+        <span class="iwb-icon iwb-icon-close">✖</span> Kapat
+    </button>
+</div>
+
+
+<div class="iwb-layout" style="height: calc(100vh - 225px);">
+
+
+
+    <div class="iwb-top ">
+
+
+    </div>
+
+
+
+
+    <div class="iwb-middle">
+
+
+
+
+
+        <div class="detay-container">
+
+            <div class="activity-panel" style="width: 40%;">
+
+                <div class="panel-title">
+                    <i class="fa fa-clock-rotate-left"></i>
+                    <!-- Sipariş İçeriği -->
+                </div>
+
+                <div class="timeline">
+
+
+                    <form [formGroup]="form">
+                        <div>
+
+                           <base-auto-complete-dropdown hasAccent hasLookup formControlName="suspansiyonTypeId"
+                                label="Askı Tipi" dbKey="SUSPANSIYON_TYPES" displayField="name" [grid]="5"
+                                [allowAdd]="false" valueField="id">
+                            </base-auto-complete-dropdown>
+                            <!-- <base-auto-complete-dropdown hasAccent hasLookup formControlName="kapasite" label="Kapasite"
+                                [items]="capasities" displayField="name" [grid]="5" [allowAdd]="false" valueField="id">
+                            </base-auto-complete-dropdown> -->
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <ul class="nav iwb-tabs">
+            <li class="nav-item"><button class="nav-link active">Malzemeler</button></li>
+        </ul>
+        
+        <base-toolbar [toolbar]="host.headerToolbar()" [toolbarState]="_bomToolbarStateService.ctx">
+        </base-toolbar>
+        <ag-grid-angular style="height:100%;" class="ag-theme-quartz" [rowData]="rowData" (gridReady)="getList($event)"  [columnDefs]="columnDefs"
+            [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }"
+             [rowHeight]="22" [headerHeight]="30" 
+            >
+        </ag-grid-angular> 
+
+
+
+
+    </div>
+
+
+
+
+</div>

@@ -1,0 +1,95 @@
+<div class="iwb-page-actions m-2">
+
+    <button class="iwb-btn iwb-btn-save" (click)="Kaydet()">
+        <span class="iwb-icon iwb-icon-save">✔</span> Kaydet
+    </button>
+    <button class="iwb-btn iwb-btn-close" (click)="Kapat()">
+        <span class="iwb-icon iwb-icon-close">✖</span> Kapat
+    </button>
+</div>
+
+
+<div class="iwb-layout" style="height: calc(100vh - 145px);">
+
+
+
+    <div class="iwb-top ">
+
+
+    </div>
+
+
+
+
+    <div class="iwb-middle">
+
+
+
+
+
+        <div class="detay-container">
+
+            <div class="activity-panel" style="width: 40%;">
+
+                <div class="panel-title m-0">
+                    Kabin Modeli= {{selectedItem?.name}}
+                    
+                    <!-- Sipariş İçeriği -->
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <ul class="nav iwb-tabs">
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'materials'" (click)="activeTab = 'materials'">
+                    Malzemeler
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link" [class.active]="activeTab === 'rules'" (click)="activeTab = 'rules'">
+                    Kurallı Malzemeler
+                </button>
+            </li>
+        </ul>
+
+
+        <base-toolbar *ngIf="activeTab === 'materials'" [toolbar]="host.headerToolbar()"
+            [toolbarState]="_bomToolbarStateService.ctx">
+        </base-toolbar>
+        <ag-grid-angular *ngIf="activeTab === 'materials'" style="height:100%;" class="ag-theme-quartz"
+            [rowData]="rowData" (gridReady)="getList($event)" [columnDefs]="columnDefs"
+            [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }" [rowHeight]="22"
+            [headerHeight]="30">
+        </ag-grid-angular>
+
+
+
+        <div *ngIf="activeTab === 'rules'" class="p-2">
+
+            <button class="btn btn-primary btn-sm mb-2" (click)="addRule()">
+                + Kural Ekle
+            </button>
+
+           <ag-grid-angular class="ag-theme-quartz" style="height:580px;" [rowData]="capacityRules"
+                [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }"
+                [columnDefs]="ruleColumnDefs" [rowHeight]="22" [headerHeight]="30">
+            </ag-grid-angular> 
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+</div>

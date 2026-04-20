@@ -1,0 +1,13 @@
+
+    <base-toolbar [toolbar]="host.headerToolbar()" [toolbarState]="_yonetimToolbarStateService.ctx">
+    </base-toolbar>
+    <ag-grid-angular style="height:100%;" class="ag-theme-quartz" [rowData]="rowData" (gridReady)="getList($event)"
+        [rowSelection]="{ mode: 'singleRow', checkboxes: false, enableClickSelection: true }" [rowHeight]="22"
+        [headerHeight]="30" (rowClicked)="onRowClicked($event)" (rowDoubleClicked)="onRowDoubleClick($event)"
+        [gridOptions]="gridOptions">
+    </ag-grid-angular>
+
+    <div class="erp-table-loader" *ngIf="isLoading">
+        <div class="erp-spinner"></div>
+        <div class="erp-loader-text">Yükleniyor...</div>
+    </div>

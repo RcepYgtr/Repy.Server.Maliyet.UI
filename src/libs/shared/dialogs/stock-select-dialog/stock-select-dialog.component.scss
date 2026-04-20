@@ -1,0 +1,112 @@
+@use "form";
+@use "action-toolbar";
+@use "tab";
+@use "ag-grid-table";
+@use "loader";
+
+
+
+/* 🌍 ANA LAYOUT */
+.iwb-layout {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 85px);
+}
+
+/* 🔼 ÜST & 🔽 ALT SABİT */
+.iwb-top,
+.iwb-bottom {
+  flex-shrink: 0;
+}
+
+/* 🔥 ORTA HER ZAMAN KALANI ALIR */
+.iwb-middle {
+  flex: 1;
+  min-height: 0;
+  /* AG-GRID kuralı */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* GRID TAM DOLDURSUN */
+.iwb-middle base-grid,
+.iwb-middle ag-grid-angular {
+  flex: 1;
+  min-height: 0;
+}
+
+/* FORM SCROLL */
+.iwb-form-container {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* ALT TAB CONTENT */
+.iwb-tab-content {
+  height: 200px;
+}
+
+
+
+:host ::ng-deep {
+
+  .tag {
+    padding: 2px 4px;
+    border-radius: 14px;
+    font-size: 10px;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  /* çizim yapılmadı */
+  .tag-cizilmedi {
+    background: #e9ecef;
+    color: #495057;
+  }
+
+  /* iptal */
+  .tag-iptal {
+    background: #f8d7da;
+    color: #842029;
+  }
+
+  /* üretimde */
+  .tag-imalat {
+    background: #cff4fc;
+    color: #0cc8ee;
+  }
+
+  /* hazır */
+  .tag-hazir {
+    background: #d1e7dd;
+    color: #0f5132;
+  }
+
+  /* ambalaj */
+  .tag-ambalaj {
+    background: #fff3cd;
+    color: #664d03;
+  }
+
+  /* bekleme */
+  .tag-bekleme {
+    // background:#f5c2c7;
+    // color:#842029;
+    background: #fff3cd;
+    color: #856404;
+  }
+
+  /* sevk edildi */
+  .tag-gitti {
+    background: #d3d3d4;
+    color: #41464b;
+  }
+
+  .tag-done {
+     background: #a0e9c9;
+    color: #00c271;
+  }
+
+
+}

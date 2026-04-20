@@ -1,0 +1,430 @@
+///////////////////////
+/// 
+
+
+
+
+
+// SİDEBAR CONTAİNER
+.iwb-sidebar {
+    width: 260px;
+    height: calc(100vh - 10px);
+    background: #fff;
+    border-right: 1px solid #dcdcdc;
+    padding: 10px 8px;
+    overflow-y: auto;
+    font-size: 13px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    margin-top: 10px;
+    overflow: hidden;
+
+}
+
+
+
+.iwb-sidebar.toggled {
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* LOGO */
+.iwb-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f7ba5;
+    margin-bottom: 4px;
+}
+
+.iwb-role {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* SEARCH */
+.iwb-search {
+    font-size: 13px;
+    margin-bottom: 12px;
+    height: 26px;
+}
+
+/* MENU */
+.iwb-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* GROUP */
+.menu-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    padding: 6px 6px;
+
+}
+
+.iwb-arrow {
+    font-size: 10px;
+    color: #888;
+}
+
+/* ITEM */
+.iwb-item {
+    display: flex;
+    align-items: center;
+    /* gap: 8px; */
+    padding: 0px 6px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    border-radius: 14px;
+    cursor: pointer;
+    color: #444;
+    height: 20px;
+    font-size: 12px;
+}
+
+/* ICON */
+.iwb-icon {
+    width: 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* HOVER */
+.iwb-item:hover {
+    background: #f2f2f2;
+}
+
+/* ACTIVE */
+.iwb-item.active {
+    background: #ffa94d;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.border-end {
+    border-right: 0 !important;
+}
+
+#sidebar-menu {
+    min-width: 250px;
+    height: 100%;
+}
+
+
+/* Başlangıçta sub-menu öğeleri gizli */
+.sub-menu {
+    display: none;
+}
+
+/* .show sınıfı eklenince sub-menu öğesini göster */
+.show+.sub-menu {
+    display: block !important;
+}
+
+/* İstediğiniz renkler ve görsel stil için örnek */
+stop {
+    stop-color: rgb(71 85 105 / var(--tw-bg-opacity, 1));
+}
+
+
+.file-manager h5 {
+    font-size: 15px;
+    color: gray;
+    font-weight: 400;
+}
+
+
+
+.nav-link {
+    font-size: 14px;
+    color: black;
+}
+
+.btn-link i {
+    font-size: 12px;
+    color: gray;
+}
+
+
+li i {
+    font-size: 12px;
+    color: #575757;
+}
+
+.text-truncate {
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Menüdeki her satır için temel görünüm */
+#sidebar-menu .menu-item {
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    border-radius: 6px;
+}
+
+/* 🔹 Sadece o <li>'ye hover olunca aktifleşsin */
+#sidebar-menu .menu-item:hover {
+    //   background-color: #e9f0ff;  /* sadece o satır */
+    background: #f5f5f5;
+    color: #0d47a1;
+}
+
+/* 🔹 Hover olduğunda sadece o satırın <a> rengi değişsin */
+#sidebar-menu .menu-item:hover>a {
+    color: #0d47a1 !important;
+}
+
+/* 🔹 Aktif tıklanmış satır */
+#sidebar-menu .menu-item.active {
+    // background-color: #d0e0ff;
+    // color: #0a3d91;
+    // font-weight: 600;
+
+    background: #ffa94d;
+    color: #fff;
+    font-weight: 600;
+}
+
+#sidebar-menu .menu-item.active>a {
+    color: #fff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------toggeled sidebar----------------*/
+.page-wrapper.toggled .sidebar-wrapper {
+    // left: 0px;
+    left: 0px;
+}
+
+@media screen and (min-width: 768px) {
+    .page-wrapper.toggled .page-content {
+        padding-left: 300px;
+    }
+}
+
+/*----------------show sidebar button----------------*/
+
+
+/*----------------sidebar-wrapper----------------*/
+.sidebar-wrapper {
+    width: 250px;
+    height: 30px;
+    max-height: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: -250px;
+    z-index: 99;
+}
+
+.btn-dark.toggledhidden {
+    display: none;
+}
+
+
+
+
+.sidebar-handle {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    width: 10px;
+    height: 80px;
+
+    background: #0096d7;
+    /* koyu slate */
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 1100;
+
+    transition:
+        width 0.2s ease,
+        background-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.sidebar-handle.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar-handle i {
+    color: #fff;
+    font-size: 10px;
+    opacity: 0.7;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Hover efekti */
+.sidebar-handle:hover {
+    width: 22px;
+    background: #005e86;
+    /* daha koyu */
+}
+
+.sidebar-handle:hover i {
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+/* Sidebar açıkken gizle */
+.sidebar-handle.toggledhidden {
+    display: none;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------side-footer------------------------------*/
+.sidebar-footer {
+    // position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+}
+
+.sidebar-footer>a {
+    flex-grow: 1;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+
+.sidebar-footer>a .notification {
+    position: absolute;
+    top: 0;
+}
+
+.badge-sonar {
+    display: inline-block;
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    top: 0;
+}
+
+.badge-sonar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #980303;
+    opacity: 0;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: sonar 1.5s infinite;
+}
+
+
+
+
+
+
+
+
+
+.chiller-theme .sidebar-footer {
+
+
+    border-top: 1px solid #dbdbdb;
+    background-color: #fff;
+}
+
+.chiller-theme .sidebar-footer>a:first-child {
+    border-left: none;
+}
+
+.chiller-theme .sidebar-footer>a:last-child {
+    border-right: none;
+}

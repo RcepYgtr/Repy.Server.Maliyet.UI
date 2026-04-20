@@ -1,0 +1,89 @@
+<div class="iwb-page-actions m-2">
+
+    <button class="iwb-btn iwb-btn-save" (click)="Kaydet()">
+        <span class="iwb-icon iwb-icon-save">✔</span> Kaydet
+    </button>
+    <button class="iwb-btn iwb-btn-close" (click)="Kapat()">
+        <span class="iwb-icon iwb-icon-close">✖</span> Kapat
+    </button>
+</div>
+
+
+<div class="iwb-layout" style="height: calc(100vh - 225px);">
+
+
+
+    <div class="iwb-top ">
+
+
+    </div>
+
+
+
+
+    <div class="iwb-middle">
+
+
+
+
+
+        <div class="detay-container">
+
+            <div class="activity-panel" style="width: 40%;">
+
+                <div class="panel-title">
+                    <i class="fa fa-clock-rotate-left"></i>
+                    <!-- Sipariş İçeriği -->
+                </div>
+
+                <div class="timeline">
+
+
+                    <form [formGroup]="form">
+                        <div>
+
+                            <base-input formControlName="code" label="Kod" hasAccent [grid]="4" [readonly]="true" ></base-input>
+                            <base-input formControlName="name" label="Malzeme Adı" hasAccent [grid]="10"></base-input>
+                            <base-input [type]="'number'" formControlName="unitCost" label="Birim Fiyatı" hasAccent
+                                [grid]="10"></base-input>
+
+                            <base-auto-complete-dropdown hasAccent hasLookup label="Birim" dbKey="UNITS"
+                                displayField="code" [grid]="5" [allowAdd]="false" valueField="id"
+                                formControlName="unitId">
+                            </base-auto-complete-dropdown>
+                            <base-auto-complete-dropdown hasAccent hasLookup label="Para Birimi" [items]="currencyTypes"
+                                displayField="name" [grid]="2" [allowAdd]="false" valueField="id"
+                                formControlName="currencyType">
+                            </base-auto-complete-dropdown>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- <div class="activity-panel" style="width: 30%;">
+
+                <div class="panel-title">
+                    <i class="fa fa-clock-rotate-left"></i>
+                  
+                </div>
+
+
+
+            </div> -->
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+</div>
