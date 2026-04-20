@@ -26,6 +26,7 @@ export class KapiMaliyetComponent {
   totalCost = 0;
   itemCost = 0;
   laborCost = 0;
+  overheadCost = 0;
   loading = false;
   private firstLoadDone = false;
   constructor(
@@ -154,7 +155,7 @@ export class KapiMaliyetComponent {
       // 🔥 COST
       this.totalCost = res.totalCost;
       this.laborCost = res.laborCost;
-
+      this.overheadCost = res.overheadCost;
     } catch (error) {
       console.error("Maliyet hesaplama hatası", error);
     } finally {

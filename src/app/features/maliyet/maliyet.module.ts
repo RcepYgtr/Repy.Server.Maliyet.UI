@@ -15,6 +15,8 @@ import { AgirlikSasesiMaliyetComponent } from './maliyet-list/agirlik-sasesi-mal
 import { KapiMaliyetComponent } from './maliyet-list/kapi-maliyet/kapi-maliyet.component';
 
 import { BaseChartDirective } from 'ng2-charts';
+import { MaliyetGrafikComponent } from './maliyet-grafik/maliyet-grafik.component';
+import { KabinMaliyetGrafikComponent } from './maliyet-grafik/kabin-maliyet-grafik/kabin-maliyet-grafik.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,10 @@ import { BaseChartDirective } from 'ng2-charts';
     SuspansiyonMaliyetComponent,
     MakineSasesiMaliyetComponent,
     KapiMaliyetComponent,
-    TestComponent
+    TestComponent,
+
+    MaliyetGrafikComponent,
+    KabinMaliyetGrafikComponent
   ],
   imports: [
     CommonModule,

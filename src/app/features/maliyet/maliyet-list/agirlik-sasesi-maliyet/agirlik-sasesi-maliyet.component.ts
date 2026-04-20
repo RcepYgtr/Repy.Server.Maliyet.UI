@@ -25,6 +25,7 @@ export class AgirlikSasesiMaliyetComponent implements OnInit {
   totalCost = 0;
   itemCost = 0;
   laborCost = 0;
+  overheadCost = 0;
   loading = false;
 
   constructor(
@@ -38,7 +39,7 @@ export class AgirlikSasesiMaliyetComponent implements OnInit {
 
   ngOnInit(): void {
 
-  //  this.loadTypes();
+    //  this.loadTypes();
 
 
     this.form.get('agirlikSasesiTypeId')?.valueChanges.subscribe(id => {
@@ -243,6 +244,7 @@ export class AgirlikSasesiMaliyetComponent implements OnInit {
       this.totalCost = res.totalCost;
       this.itemCost = res.itemCost;
       this.laborCost = res.laborCost;
+            this.overheadCost = res.overheadCost;
 
     } catch (error) {
       console.error("Maliyet hesaplama hatası", error);
@@ -281,7 +283,7 @@ export class AgirlikSasesiMaliyetComponent implements OnInit {
 
 
 
-  hesapla(){
+  hesapla() {
     this.tryCalculate()
   }
 

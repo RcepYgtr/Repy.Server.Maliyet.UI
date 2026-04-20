@@ -36,6 +36,7 @@ export const SIDEBAR_GROUPS: SidebarGroup[] = [
             { title: 'Personeller', icon: '/system.png', href: '/features/personel', roles: ['Admin','Muhasebe']},
             { title: 'İşçilik Parametreleri', icon: '/system.png', href: '/features/labor', roles: ['Admin','Satış/Pazarlama']},
             { title: 'Yönetim', icon: '/system.png', href: '/features/yonetim', roles: ['Admin']},
+            { title: 'Maliyet Grafik', icon: '/system.png', href: '/features/maliyet/grafik', roles: ['Admin','Satış/Pazarlama']},
         ]
     },
 

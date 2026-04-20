@@ -25,6 +25,7 @@ export class MakineSasesiMaliyetComponent implements OnInit {
   totalCost = 0;
   itemCost = 0;
   laborCost = 0;
+  overheadCost = 0;
   loading = false;
 
   constructor(
@@ -234,7 +235,7 @@ export class MakineSasesiMaliyetComponent implements OnInit {
       this.totalCost = res.totalCost;
       this.itemCost = res.itemCost;
       this.laborCost = res.laborCost;
-
+      this.overheadCost = res.overheadCost;
     } catch (error) {
       console.error("Maliyet hesaplama hatası", error);
     } finally {

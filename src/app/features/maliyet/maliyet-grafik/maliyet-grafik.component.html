@@ -54,12 +54,9 @@
 
     <div class="iwb-middle">
         <div class="erp-table-wrapper">
-             <app-kabin-maliyet *ngIf="activeTab === 'KABIN'"></app-kabin-maliyet>
-              <app-suspansiyon-maliyet *ngIf="activeTab === 'SUSPANSIYON'"></app-suspansiyon-maliyet> 
-             <app-makine-sasesi-maliyet *ngIf="activeTab === 'MAKINESASESI'"></app-makine-sasesi-maliyet>
-             <app-agirlik-sasesi-maliyet *ngIf="activeTab === 'AGIRLIKSASESI'"></app-agirlik-sasesi-maliyet>
-             <app-kapi-maliyet *ngIf="activeTab === 'KAPI'"></app-kapi-maliyet>
-              <!-- <app-test *ngIf="activeTab === 'KABIN'"></app-test>   -->
+             <!-- <app-kabin-maliyet *ngIf="activeTab === 'KABIN'"></app-kabin-maliyet> -->
+            <app-kabin-maliyet-grafik *ngIf="activeTab === 'KABIN'"></app-kabin-maliyet-grafik> 
+
         </div>
 
     </div>
